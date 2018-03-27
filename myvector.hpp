@@ -31,3 +31,5 @@ void vectorPrint (const vector &_vector, std::ostream &_stream);
 void vectorInsert (vector &_vector, int _position, int _data);
 
 void vectorDelete (vector &_vector, int _position);
+
+bool myvectorEmpty (vector &_vector);

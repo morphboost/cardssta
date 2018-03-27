@@ -23,6 +23,10 @@ bool vectorEmpty (vector &_vector) {
     return _vector.used == 0;
 }
 
+bool myvectorEmpty (vector &_vector) {
+    return _vector.used <= 1;
+}
+
 void vectorGrow (vector &_vector) {
     int vectorSizeNew = _vector.size * 2;
     int * vectorDataNew = new int[vectorSizeNew];
@@ -42,7 +46,6 @@ void vectorBack (vector &_vector, int _data) {
 }
 
 void vectorPop (vector &_vector) {
-    assert(!vectorEmpty(_vector));
     --_vector.used;
 }
 
@@ -74,7 +77,6 @@ void vectorPrint (const vector &_vector, std::ostream &_stream) {
 }
 
 void vectorInsert (vector &_vector, int _position, int _data) {
-    assert (_position >=0 && _position < _vector.used);
     int NewUsed = _vector.used + 1;
     if (NewUsed > _vector.size)
         vectorGrow(_vector);
